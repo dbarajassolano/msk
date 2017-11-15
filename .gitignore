@@ -1,0 +1,10 @@
+# Emacs-related files
+*~
+.tramp_history
+
+# macOS files
+.DS_Store
+
+# Output
+*.txt
+*.mat
