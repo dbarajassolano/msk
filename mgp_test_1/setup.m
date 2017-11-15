@@ -1,5 +1,8 @@
 clear all;
 
+% Test ID
+testID = ID_mgp_test;
+
 % Geometry
 L       = [2.0, 1.0];
 N       = [256, 128];
@@ -28,4 +31,4 @@ ifobs = randi([1, geom.Nc], Nfobs, 1);
 xfobs = geom.xc(ifobs, :);
 yfobs = yf(ifobs);
 
-save('mgp_test_1_setup.mat', 'geom', 'yf', 'yc', 'ycobs', 'yfobs', 'xcobs', 'xfobs');
+save(sprintf('%s_setup.mat', testID), 'geom', 'yf', 'yc', 'ycobs', 'yfobs', 'xcobs', 'xfobs');
