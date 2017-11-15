@@ -4,7 +4,8 @@ if (nargin < 7), seed = 0; end
 
 % Padded fine
 filename_padded = 'ref_padded.txt';
-system(sprintf('Rscript refgen_padded.R %s %g %g %g %g %g %g %g', filename_padded, L(1), L(2), N(1), N(2), pad, cor_len, seed));
+toolspath = [fileparts(mfilename('fullpath')) filesep];
+system(sprintf('Rscript %srefgen_padded.R %s %g %g %g %g %g %g %g', toolspath, filename_padded, L(1), L(2), N(1), N(2), pad, cor_len, seed));
 y_padded = dlmread(filename_padded);
 delete(filename_padded);
 
