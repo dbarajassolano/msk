@@ -8,6 +8,8 @@
 # Output
 *.txt
 *.mat
+*.eps
+*.png
 
 # GPML
 gpml-matlab-*
