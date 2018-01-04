@@ -19,6 +19,8 @@ filename_coarse = 'ref_256x128_coarse.txt';
 %% Observations
 rng(237);
 
+noise_std_dev = 5e-2;
+
 % Coarse observations
 Ncobs = 50;
 icobs = randperm(geom.Nc, Ncobs)';
@@ -30,5 +32,9 @@ Nfobs = 150;
 ifobs = randi([1, geom.Nc], Nfobs, 1);
 xfobs = geom.xc(ifobs, :);
 yfobs = yf(ifobs);
+
+% Add the noise!
+ycobs = ycobs + noise_std_dev * randn(Ncobs, 1);
+yfobs = yfobs + noise_std_dev * randn(Nfobs, 1);
 
 save(sprintf('%s_setup.mat', testID), 'geom', 'yf', 'yc', 'ycobs', 'yfobs', 'xcobs', 'xfobs', 'pad', 'cor_len');
