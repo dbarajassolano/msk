@@ -48,7 +48,7 @@ set(hp, 'LineWidth', 2.0);
 hl = legend(hp, {'Exact', 'Empirical', 'ML', 'LOO-CV'}, 'Interpreter', 'latex');
 set(hf, 'Position', [0, 0, 500, 200]);
 hl.Location = 'SouthEast'; hl.Box = 'off';
-export_fig(sprintf('%s_vgram_f.pdf', testID), '-transparent', hf);
+export_fig(sprintf('%s_vgram_f.eps', testID), '-transparent', hf);
 
 % Coarse
 hf = figure('Visible', 'off');
@@ -62,7 +62,7 @@ set(hp, 'LineWidth', 2.0);
 hl = legend(hp, {'Exact', 'Empirical', 'ML', 'LOO-CV'}, 'Interpreter', 'latex');
 set(hf, 'Position', [0, 0, 500, 200]);
 hl.Location = 'SouthEast'; hl.Box = 'off';
-export_fig(sprintf('%s_vgram_c.pdf', testID), '-transparent', hf);
+export_fig(sprintf('%s_vgram_c.eps', testID), '-transparent', hf);
 
 % Coarse-fine
 hf = figure('Visible', 'off');
@@ -77,4 +77,4 @@ set(hp, 'LineWidth', 2.0);
 hl = legend(hp, {'Exact', 'ML', 'LOO-CV'}, 'Interpreter', 'latex');
 set(hf, 'Position', [0, 0, 500, 200]);
 hl.Location = 'SouthEast'; hl.Box = 'off';
-export_fig(sprintf('%s_vgram_cf.pdf', testID), '-transparent', hf);
+export_fig(sprintf('%s_vgram_cf.eps', testID), '-transparent', hf);

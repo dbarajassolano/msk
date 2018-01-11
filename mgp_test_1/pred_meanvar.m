@@ -17,3 +17,6 @@ toc;
 tic;
 [pred_fine, predlow_fine, ~] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
 toc;
+
+% Output
+save(sprintf('%s_pred_meanvar.mat', testID), 'pred_coarse', 'pred_fine');
