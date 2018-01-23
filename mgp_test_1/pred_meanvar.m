@@ -10,13 +10,21 @@ geomlow = geom_2d(geom.L, Nlow);
 
 % Coarse
 tic;
-[pred_coarse, predlow_coarse, ~] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'coarse');
+[pred_coarse, ~, ~] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'coarse');
+toc;
+
+tic;
+[pred_coarse_only, ~, ~] = gp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'coarse');
 toc;
 
 % Fine
 tic;
-[pred_fine, predlow_fine, ~] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
+[pred_fine, ~, ~] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
+toc;
+
+tic;
+[pred_fine_only, ~, ~] = gp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
 toc;
 
 % Output
-save(sprintf('%s_pred_meanvar.mat', testID), 'pred_coarse', 'pred_fine');
+save(sprintf('%s_pred_meanvar.mat', testID), 'pred_coarse', 'pred_fine', 'pred_coarse_only', 'pred_fine_only');
