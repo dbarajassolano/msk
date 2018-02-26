@@ -2,7 +2,7 @@ clear all;
 
 % Setup
 testID = 'mgp_test_1';
-sID    = 's1';
+sID    = 's2';
 Ns     = 4000;
 seed   = 0;
 load(sprintf('../%s%s%s_setup.mat',   testID, filesep, testID));
@@ -13,11 +13,11 @@ Nlow    = geom.N / 2;
 geomlow = geom_2d(geom.L, Nlow);
 
 tic;
-[~, ~, Lf] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
+[~, ~, Lf] = gp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'fine');
 toc;
 
 tic;
-[~, ~, Lc] = mgp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'coarse');
+[~, ~, Lc] = gp_nystrom(geom, Nlow, hypo, yfobs, ycobs, xfobs, xcobs, 'coarse');
 toc;
 
 % Sampler
