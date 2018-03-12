@@ -55,7 +55,7 @@ fill([geom.x; flipdim(geom.x, 1)], f, [7, 7, 7] / 8, 'LineStyle', 'none', 'Paren
 plot(geom.x, meanhpred, 'r', geom.x, href(itest), 'k', 'Parent', ha);
 ha.XLabel.String = {'$x / L$'};
 ha.XLabel.Interpreter = 'latex';
-ha.YLabel.String = {'$(h - h_{\mathrm{R}}) / (h_{\mathrm{L}} - h_{\mathrm{R}})$'};
+ha.YLabel.String = {'$(h^f - h^f_{\mathrm{R}}) / (h^f_{\mathrm{L}} - h^f_{\mathrm{R}})$'};
 ha.YLabel.Interpreter = 'latex';
 set(hf, 'Position', [0, 0, 300, 225], 'Color', 'w');
 export_fig(sprintf('%s_%s_hf_cond.eps', testID, sID));
@@ -67,7 +67,7 @@ fill([geom.x; flipdim(geom.x, 1)], f, [7, 7, 7] / 8, 'LineStyle', 'none', 'Paren
 plot(geom.x, meanh(itest), 'r', 'Parent', ha);
 ha.XLabel.String = {'$x / L$'};
 ha.XLabel.Interpreter = 'latex';
-ha.YLabel.String = {'$(h - h_{\mathrm{R}}) / (h_{\mathrm{L}} - h_{\mathrm{R}})$'};
+ha.YLabel.String = {'$(h^f - h^f_{\mathrm{R}}) / (h^f_{\mathrm{L}} - h^f_{\mathrm{R}})$'};
 ha.YLabel.Interpreter = 'latex';
 set(hf, 'Position', [0, 0, 300, 225], 'Color', 'w');
 export_fig(sprintf('%s_%s_hf_unc.eps', testID, sID));
